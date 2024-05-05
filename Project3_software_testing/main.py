@@ -5,9 +5,9 @@ loader = unittest.TestLoader()
 suite = unittest.TestSuite()
 
 # Thêm các test vào TestSuite
-suite.addTests(loader.discover('./test_requirement1'))
+suite.addTests(loader.discover('./login'))
 
 
 # Khởi tạo TestRunner và chạy TestSuite
-runner = unittest.TextTestRunner(verbosity=3)
+runner = unittest.TextTestRunner(verbosity=2)
 result = runner.run(suite)
