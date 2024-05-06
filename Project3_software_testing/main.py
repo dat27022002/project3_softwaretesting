@@ -5,7 +5,7 @@ loader = unittest.TestLoader()
 suite = unittest.TestSuite()
 
 # Thêm các test vào TestSuite
-suite.addTests(loader.discover('./login'))
+suite.addTests(loader.discover('./grading_feedback'))
 
 
 # Khởi tạo TestRunner và chạy TestSuite
