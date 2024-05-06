@@ -24,12 +24,31 @@ class Test_login(unittest.TestCase):
         
         self.assertTrue("Lost password?" in self.driver.page_source)
 
+    "Testcase with valid username and valid password."
+    def test_login_success(self):
+        driver=self.driver
+
+        self.assertTrue("Lost password?" in self.driver.page_source)
+        input_username=driver.find_element(By.NAME, "username")
+        input_username.clear()
+        input_username.send_keys(username_correct)
+        time.sleep(1)
+        input_password=driver.find_element(By.NAME, 'password')
+        input_password.clear()
+        input_password.send_keys(password_correct)
+        button_handle_login=driver.find_element(By.ID, "loginbtn")
+        button_handle_login.click()
+        
+        self.assertTrue("Course overview" in self.driver.page_source)
+
+
     "Testcase with valid username and wrong password."
     def test_login_fail_with_wrong_password(self):
         driver=self.driver
         input_username=driver.find_element(By.NAME, "username")
         input_username.clear()
         input_username.send_keys(username_correct)
+        time.sleep(1)
         input_password=driver.find_element(By.NAME, "password")
         input_password.clear()
         input_password.send_keys(password_wrong)
@@ -44,6 +63,7 @@ class Test_login(unittest.TestCase):
         input_username=driver.find_element(By.NAME, "username")
         input_username.clear()
         input_username.send_keys(username_wrong)
+        time.sleep(1)
         input_password=driver.find_element(By.NAME, "password")
         input_password.clear()
         input_password.send_keys(password_correct)
@@ -58,6 +78,7 @@ class Test_login(unittest.TestCase):
         input_username=driver.find_element(By.NAME, "username")
         input_username.clear()
         input_username.send_keys(username_wrong)
+        time.sleep(1)
         input_password=driver.find_element(By.NAME, "password")
         input_password.clear()
         input_password.send_keys(password_wrong)
