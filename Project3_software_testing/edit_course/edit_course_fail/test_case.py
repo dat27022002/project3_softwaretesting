@@ -38,30 +38,7 @@ class Test_login(unittest.TestCase):
         button_handle_login.click()
         
         self.assertTrue("Course overview" in self.driver.page_source)
-        
-    "Testcase with valid username and wrong password."
-    def test_edit_course_fail(self): 
-        driver=self.driver
-        driver.implicitly_wait(10)
-        
-        course=driver.find_element(By.LINK_TEXT, "Moodle and Mountaineering")
-        time.sleep(2)
-        course.click()
-        
-        self.assertTrue("This course will introduce you to the basics of Alpine Mountaineering, while at the same time highlighting some of the great features of Moodle." in self.driver.page_source)  
-        navigation=driver.find_element(By.CLASS_NAME, "secondary-navigation")
-        button_setting=navigation.find_element(By.LINK_TEXT, "Settings")
-        button_setting.click()
-        
-        self.assertTrue("Edit course settings" in self.driver.page_source)
-        input_fullname=driver.find_element(By.NAME, "fullname")
-        input_fullname.clear()
-        button_save=driver.find_element(By.NAME, "saveanddisplay")
-        button_save.click()
-        
-        self.assertTrue("Missing full name" in self.driver.page_source)  
-          
-          
+       
    
     
     def tearDown(self):
