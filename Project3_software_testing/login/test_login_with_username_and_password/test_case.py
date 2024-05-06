@@ -24,6 +24,23 @@ class Test_login(unittest.TestCase):
         
         self.assertTrue("Lost password?" in self.driver.page_source)
 
+    "Testcase with valid username and valid password."
+    def test_login_success(self):
+        driver=self.driver
+
+        self.assertTrue("Lost password?" in self.driver.page_source)
+        input_username=driver.find_element(By.NAME, "username")
+        input_username.clear()
+        input_username.send_keys("teacher")
+        input_password=driver.find_element(By.NAME, "password")
+        input_password.clear()
+        input_password.send_keys("moodle")
+        button_handle_login=driver.find_element(By.ID, "loginbtn")
+        button_handle_login.click()
+        
+        self.assertTrue("Course overview" in self.driver.page_source)
+
+
     "Testcase with valid username and wrong password."
     def test_login_fail_with_wrong_password(self):
         driver=self.driver
