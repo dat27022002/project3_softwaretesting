@@ -6,12 +6,7 @@ from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 import time
 
-username_correct="teacher"
-password_correct="moodle"
-username_wrong="teacher1"
-password_wrong="moodle1"
-
-class Test_login(unittest.TestCase):
+class Test_edit_course(unittest.TestCase):
 
     def setUp(self):
         self.driver = webdriver.Chrome()
@@ -31,6 +26,7 @@ class Test_login(unittest.TestCase):
         input_username=driver.find_element(By.NAME, "username")
         input_username.clear()
         input_username.send_keys("teacher")
+        time.sleep(1)
         input_password=driver.find_element(By.NAME, "password")
         input_password.clear()
         input_password.send_keys("moodle")
