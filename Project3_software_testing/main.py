@@ -7,10 +7,10 @@ loader = unittest.TestLoader()
 suite = unittest.TestSuite()
 
 # Thêm các test vào TestSuite
-suite.addTests(loader.discover('../Project3_software_testing'))
-#suite.addTests(loader.discover('./login/test_login_with_username_and_password'))
+#suite.addTests(loader.discover('../Project3_software_testing'))
+#suite.addTests(loader.discover('./login'))
 #suite.addTests(loader.discover('./edit_course'))
-#suite.addTests(loader.discover('./search_student'))
+suite.addTests(loader.discover('./search_student'))
 
 
 
